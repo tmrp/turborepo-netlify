@@ -51,6 +51,6 @@ export const TYPOGRAPHY = {
 };
 
 export const BACKGROUND_COLOR = {
-  astro: "bg-gradient-to-t from-gray-800 to-purple-900",
-  next: "bg-gradient-to-t from-gray-800 to-blue-900",
+  astro: "bg-gradient-to-t from-pink-800 to-green-900",
+  next: "bg-gradient-to-t from-gray-200 to-slate-800",
 } as const;
