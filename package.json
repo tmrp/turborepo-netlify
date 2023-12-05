@@ -7,7 +7,7 @@
     "build:astro:node:env": "dotenv -- turbo run build:astro:node:env --filter=astro",
     "build:astro:netlify:env": "dotenv -- turbo run build:astro:netlify:env --filter=astro",
     "dev:astro": "turbo run dev --filter=astro",
-    "dev:env": "dotenv -- turbo run dev:env",
+    "dev:env": "dotenv -- turbo run dev:env --concurrency 12",
     "dev:netlify:env": "dotenv -- turbo run dev:netlify:env --concurrency 12",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
@@ -22,6 +22,6 @@
   "packageManager": "pnpm@8.9.0",
   "name": "multi-framework-turborepo",
   "engines": {
-    "node": ">=18.18.0"
+    "node": ">=20.10.0"
   }
 }

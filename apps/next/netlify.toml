@@ -2,13 +2,19 @@
 function = "edge-middleware"
 path = "/astro"
 
+[[edge_functions]]
+function = "edge-cache-control"
+path = "/*"
+
 [dev]
 targetPort = 3001
 publish = "apps/next/.next"
 edge_functions = "apps/next/netlify/edge-functions"
+functions = "apps/next/netlify/functions"
 command = "pnpm run dev:env"
 
 [build]
 edge_functions = "apps/next/netlify/edge-functions"
+functions = "apps/next/netlify/functions"
 publish = "apps/next/.next"
 command = "pnpm run build:env"

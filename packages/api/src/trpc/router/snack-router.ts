@@ -41,13 +41,14 @@ export const snackRouter = createTRPCRouter({
           .from(snackSchema)
           .where(eq(snackSchema.slug, slug));
       });
-
       const snacksData = await Promise.allSettled(snacks);
 
       const resolvedSnacks = snacksData
         .filter((result) => result.status === 'fulfilled')
         .map((result) => result);
 
+      ctx.headers.set('Cache-Control', 's-maxage=1, stale-while-revalidate');
+      ctx.headers.set('Spaghetti', 'BOLO');
       return resolvedSnacks.map((snack: any) => snack.value[0]);
     }),
 
