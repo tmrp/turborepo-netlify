@@ -1,0 +1,9 @@
+{
+  "extends": "tsconfig-custom/react-library",
+  "include": ["./src/**"],
+  "compilerOptions": {
+    "forceConsistentCasingInFileNames": false,
+    "lib": ["dom"],
+    "jsx": "react"
+  }
+}

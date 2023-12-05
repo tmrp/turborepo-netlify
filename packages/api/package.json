@@ -1,0 +1,38 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./index.ts",
+  "module": "./index.ts",
+  "types": "./index.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "with-env": "dotenv -e ../../.env --"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@planetscale/database": "^1.11.0",
+    "@tanstack/react-query": "^4.18.0",
+    "@trpc/client": "^10.43.6",
+    "@trpc/react-query": "^10.43.6",
+    "@trpc/server": "^10.43.6",
+    "@types/react": "^18.2.37",
+    "cors": "^2.8.5",
+    "dompurify": "^3.0.6",
+    "dotenv": "^16.3.1",
+    "drizzle-orm": "^0.29.0",
+    "react": "^18.2.0",
+    "superjson": "^2.2.1",
+    "zod": "^3.22.4"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.16",
+    "@types/dompurify": "^3.0.5",
+    "@types/react": "^18.2.0",
+    "drizzle-kit": "^0.20.4",
+    "tsconfig-custom": "workspace:*",
+    "typescript": "^5.2.2"
+  }
+}

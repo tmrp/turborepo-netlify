@@ -1,0 +1,17 @@
+[[edge_functions]]
+function = "edge-middleware"
+path = "/next"
+
+[dev]
+port = 8888
+targetPort = 3000
+publish = "apps/astro/netlify/dist"
+edge_functions = "apps/astro/netlify/edge-functions"
+command = "pnpm run dev:astro:env"
+framework = "astro"
+
+[build]
+publish = "apps/astro/netlify/dist"
+edge_functions = "apps/astro/netlify/edge-functions"
+command = "pnpm run build:env"
+framework = "astro"

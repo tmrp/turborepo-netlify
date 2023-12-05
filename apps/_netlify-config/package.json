@@ -1,0 +1,16 @@
+{
+  "name": "netlify-config",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@netlify/edge-functions": "^2.2.0",
+    "@netlify/functions": "^2.3.0",
+    "typescript": "^5.2.2"
+  }
+}
