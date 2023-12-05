@@ -1,0 +1,42 @@
+{
+  "name": "astro",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev:env": "dotenv -e .env -- astro dev --port 3000 --config astro.config.node.mjs",
+    "dev:netlify:env": "dotenv -e .env -- astro dev --port 3000 --config astro.config.netlify.mjs",
+    "dev:node:env": "dotenv -e .env -- astro dev --port 3000 --config astro.config.node.mjs",
+    "start": "dotenv -e .env -- astro dev --port 3000",
+    "build": "astro check && astro build",
+    "preview": "astro preview",
+    "astro": "astro",
+    "build:astro:netlify": "dotenv -e .env -- astro check && astro build --config astro.config.netlify.mjs",
+    "build:astro:node:env": "dotenv -e .env -- astro check && astro build --config astro.config.node.mjs",
+    "build:env": "dotenv -e .env -- astro check && astro build --config astro.config.netlify.mjs"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.3.1",
+    "@astrojs/netlify": "^3.0.4",
+    "@astrojs/node": "^6.0.4",
+    "@astrojs/react": "^3.0.5",
+    "@astrojs/tailwind": "^5.0.2",
+    "@netlify/functions": "^2.4.0",
+    "@trpc/server": "^10.44.1",
+    "@types/react": "^18.0.21",
+    "@types/react-dom": "^18.0.6",
+    "api": "workspace:*",
+    "astro": "^3.6.4",
+    "db": "workspace:*",
+    "dotenv": "^16.3.1",
+    "react": "^18.0.0",
+    "react-dom": "^18.0.0",
+    "routes": "workspace:*",
+    "tailwindcss": "^3.0.24",
+    "typescript": "^5.2.2",
+    "ui": "workspace:*"
+  },
+  "devDependencies": {
+    "tailwindcss-config": "workspace:*",
+    "vite": "^5.0.5"
+  }
+}

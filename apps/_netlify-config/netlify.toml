@@ -1,0 +1,11 @@
+[[redirects]]
+from = "https://snacksfrom.nl"
+to = "https://next.snacksfrom.nl"
+status = 200
+force = true
+
+[[redirects]]
+from = "/scoreboard"
+to = "https://next.snacksfrom.nl/scoreboard"
+status = 200
+force = true

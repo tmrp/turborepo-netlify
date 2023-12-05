@@ -1,0 +1,57 @@
+---
+import { api } from 'api';
+import { AppBar, Box, Card, Container, Flex, Navigation, Typography } from 'ui';
+import { routes } from 'routes';
+import Layout from '../layouts/Layout.astro';
+
+const { slug } = Astro.params;
+
+const slugToArray = () => {
+  return slug?.split('/') ?? [];
+};
+
+const snacks = await api.snack.getSnacksBySlug.query(slugToArray());
+const randomSlugs = await api.snack.getTwoRandomSnackSlugs.query();
+
+if (Astro.request.method === "POST") {
+  const data = await Astro.request.formData();
+
+  const snackId = data.get("snack");
+  
+  await api.snack.vote.mutate(snackId as string);
+
+  return Astro.redirect(`/${randomSlugs[0].slug}/${randomSlugs[1].slug}`);
+}
+---
+
+<Layout title="Welcome to Astro.">
+	  <Container>
+      <AppBar>
+        <Navigation>
+          {routes.appRoutes.map((route) => (
+            <li>
+              <a href={route.path}>{route.name}</a>
+            </li>
+          ))}
+        </Navigation>
+      </AppBar>
+      <Box spaceTop="4" spaceBottom="4">
+        <Typography invert>
+          <h1>Favourite Dutch Snack?</h1>
+        </Typography>
+      </Box>
+      <Flex>
+          {snacks.map((snack) => (
+            <form method="POST">
+              <button class="focus:outline-none focus:ring focus:ring-blue-300" name="snack" value={snack.id} type="submit">
+                <Card
+                title={snack.name}
+                image={snack.img}
+                text={snack.description}
+                />
+              </button>
+            </form>
+        ))}
+      </Flex>
+    </Container>
+</Layout>

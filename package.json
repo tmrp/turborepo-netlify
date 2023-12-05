@@ -1,0 +1,27 @@
+{
+  "private": true,
+  "scripts": {
+    "build": "turbo run build",
+    "build:env": "dotenv -- turbo run build:env",
+    "build:astro:netlify": "turbo run build:astro:netlify --filter=astro",
+    "build:astro:node:env": "dotenv -- turbo run build:astro:node:env --filter=astro",
+    "build:astro:netlify:env": "dotenv -- turbo run build:astro:netlify:env --filter=astro",
+    "dev:astro": "turbo run dev --filter=astro",
+    "dev:env": "dotenv -- turbo run dev:env",
+    "dev:netlify:env": "dotenv -- turbo run dev:netlify:env --concurrency 12",
+    "lint": "turbo run lint",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+  },
+  "devDependencies": {
+    "dotenv": "^16.3.1",
+    "dotenv-cli": "latest",
+    "eslint": "^8.48.0",
+    "prettier": "^3.0.3",
+    "turbo": "latest"
+  },
+  "packageManager": "pnpm@8.9.0",
+  "name": "multi-framework-turborepo",
+  "engines": {
+    "node": ">=18.18.0"
+  }
+}
