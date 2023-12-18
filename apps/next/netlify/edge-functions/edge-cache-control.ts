@@ -1,4 +1,9 @@
-import type { Context } from '@netlify/functions';
+import type { Config, Context } from '@netlify/edge-functions';
+
+export const config: Config = {
+  path: '/*',
+  excludedPath: ['/scoreboard'],
+};
 
 export default async function EdgeCacheControl(
   request: Request,

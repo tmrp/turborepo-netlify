@@ -1,4 +1,4 @@
-import type { Context } from '@netlify/functions';
+import type { Context } from '@netlify/edge-functions';
 
 export default async function EdgeMiddleware(
   request: Request,
